@@ -1,0 +1,14 @@
+{
+  "name": "textlint-plugin-jsx",
+  "version": "0.0.0",
+  "description": "JSX support for textlint",
+  "repository": "https://github.com/blue-hood/textlint-plugin-jsx",
+  "license": "MIT",
+  "author": "Hood <hato6502@gmail.com>",
+  "type": "module",
+  "main": "dist/index.js",
+  "dependencies": {
+    "acorn": "^7.3.1",
+    "typescript": "^3.9.6"
+  }
+}
