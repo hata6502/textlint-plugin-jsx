@@ -1,3 +1,3 @@
-import acorn from "acorn";
+import acorn from 'acorn'
 
-console.log(acorn.parse("1 + 1"));
+console.log(acorn.parse('1 + 1'))
