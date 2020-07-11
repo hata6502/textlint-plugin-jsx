@@ -1,8 +1,8 @@
-import type { TextlintPluginCreator } from '@textlint/types'
-import Processor from './JSXProcessor'
+import type { TextlintPluginCreator } from '@textlint/types';
+import Processor from './JSXProcessor';
 
 const creator: TextlintPluginCreator = {
-  Processor
-}
+  Processor,
+};
 
-export default creator
+export default creator;
