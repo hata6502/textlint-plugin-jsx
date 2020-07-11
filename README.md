@@ -61,6 +61,10 @@ Give a ⭐️ if this project helped you!
 Copyright © 2020 [Hood <hato6502@gmail.com>](https://github.com/hata6502).<br />
 This project is [MIT](https://github.com/blue-hood/textlint-plugin-jsx/blob/master/LICENSE) licensed.
 
+## Disclaimer
+
+Please see [DISCLAIMER.md](https://github.com/blue-hood/textlint-plugin-jsx/blob/master/DISCLAIMER.md).
+
 ---
 
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
