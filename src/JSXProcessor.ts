@@ -66,9 +66,9 @@ class JSXProcessor implements TextlintPluginProcessor {
 
   processor() {
     return {
-      preProcess(text: string, filePath?: string) {
+      preProcess(text: string) {
         const sourceFile = ts.createSourceFile(
-          filePath ?? 'foo.tsx',
+          'foo.tsx',
           text,
           ts.ScriptTarget.Latest,
           true
