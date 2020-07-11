@@ -1,7 +1,7 @@
 {
   "name": "textlint-plugin-jsx",
   "version": "1.0.1",
-  "description": "JSX support for textlint",
+  "description": "JSX and TSX support for textlint. ",
   "keywords": [
     "textlintplugin"
   ],

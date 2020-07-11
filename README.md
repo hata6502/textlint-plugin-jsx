@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to textlint-plugin-jsx 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="npm" src="https://img.shields.io/npm/v/textlint-plugin-jsx" />
   <a href="https://github.com/blue-hood/textlint-plugin-jsx/blob/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
@@ -11,7 +11,7 @@
   </a>
 </p>
 
-> JSX support for textlint
+> JSX and TSX support for textlint.
 
 ## Install
 
