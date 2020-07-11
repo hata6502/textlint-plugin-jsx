@@ -4,6 +4,8 @@
   <a href="https://github.com/blue-hood/textlint-plugin-jsx/blob/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
+  <a href="https://lgtm.com/projects/g/blue-hood/textlint-plugin-jsx/alerts/"><img alt="Total alerts" src="https://img.shields.io/lgtm/alerts/g/blue-hood/textlint-plugin-jsx.svg?logo=lgtm&logoWidth=18"/></a>
+  <a href="https://lgtm.com/projects/g/blue-hood/textlint-plugin-jsx/context:javascript"><img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/blue-hood/textlint-plugin-jsx.svg?logo=lgtm&logoWidth=18"/></a>
   <a href="https://twitter.com/hata6502" target="_blank">
     <img alt="Twitter: hata6502" src="https://img.shields.io/twitter/follow/hata6502.svg?style=social" />
   </a>
