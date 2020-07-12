@@ -89,7 +89,7 @@ class JSXProcessor implements TextlintPluginProcessor {
   }
 
   availableExtensions() {
-    return ['.js', '.jsx', '.ts', '.tsx', ...this.extensions];
+    return ['.jsx', '.tsx', ...this.extensions];
   }
 
   processor() {

@@ -73,7 +73,7 @@ var JSXProcessor = /** @class */ (function () {
         this.extensions = (_a = options === null || options === void 0 ? void 0 : options.extensions) !== null && _a !== void 0 ? _a : [];
     }
     JSXProcessor.prototype.availableExtensions = function () {
-        return __spreadArrays(['.js', '.jsx', '.ts', '.tsx'], this.extensions);
+        return __spreadArrays(['.jsx', '.tsx'], this.extensions);
     };
     JSXProcessor.prototype.processor = function () {
         return {
