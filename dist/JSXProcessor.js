@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __spreadArrays = (this && this.__spreadArrays) || function () {
     for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
     for (var r = Array(s), k = 0, i = 0; i < il; i++)
@@ -25,15 +36,10 @@ var jsxToAST = function (node) {
         }
         children.push(txtChildNode);
     });
-    return {
-        // TODO: Implement map for all SyntaxKinds.
-        type: node.kind === ts.SyntaxKind.SourceFile
-            ? ast_node_types_1.ASTNodeTypes.Document
-            : node.kind === ts.SyntaxKind.JsxText
-                ? ast_node_types_1.ASTNodeTypes.Str
-                : ast_node_types_1.ASTNodeTypes.Html,
+    var range = [node.pos, node.end];
+    var txtPartialNode = {
         raw: node.getText(),
-        range: [node.pos, node.end],
+        range: range,
         loc: {
             start: {
                 column: startLineAndCharacter.character,
@@ -44,8 +50,22 @@ var jsxToAST = function (node) {
                 line: endLineAndCharacter.line + 1,
             },
         },
-        children: children,
     };
+    // TODO: Implement map for all SyntaxKinds.
+    switch (node.kind) {
+        case ts.SyntaxKind.SourceFile: {
+            var txtNode = __assign(__assign({}, txtPartialNode), { type: ast_node_types_1.ASTNodeTypes.Document, children: children });
+            return txtNode;
+        }
+        case ts.SyntaxKind.JsxText: {
+            var txtNode = __assign(__assign({}, txtPartialNode), { type: ast_node_types_1.ASTNodeTypes.Str, value: node.getText() });
+            return txtNode;
+        }
+        default: {
+            var txtNode = __assign(__assign({}, txtPartialNode), { type: ast_node_types_1.ASTNodeTypes.HtmlBlock, children: children });
+            return txtNode;
+        }
+    }
 };
 var JSXProcessor = /** @class */ (function () {
     function JSXProcessor(options) {

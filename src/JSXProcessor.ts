@@ -1,12 +1,16 @@
 import { ASTNodeTypes } from '@textlint/ast-node-types';
-import type { TxtParentNode } from '@textlint/ast-node-types';
+import type {
+  TxtNode,
+  TxtParentNode,
+  TxtTextNode,
+} from '@textlint/ast-node-types';
 import type {
   TextlintPluginOptions,
   TextlintPluginProcessor,
 } from '@textlint/types';
 import * as ts from 'typescript';
 
-const jsxToAST = (node: ts.Node): TxtParentNode => {
+const jsxToAST = (node: ts.Node) => {
   const startLineAndCharacter = node
     .getSourceFile()
     .getLineAndCharacterOfPosition(node.pos);
@@ -14,7 +18,7 @@ const jsxToAST = (node: ts.Node): TxtParentNode => {
     .getSourceFile()
     .getLineAndCharacterOfPosition(node.end);
 
-  const children: TxtParentNode[] = [];
+  const children: TxtNode[] = [];
 
   node.forEachChild((child) => {
     const txtChildNode = jsxToAST(child);
@@ -29,16 +33,10 @@ const jsxToAST = (node: ts.Node): TxtParentNode => {
     children.push(txtChildNode);
   });
 
-  return {
-    // TODO: Implement map for all SyntaxKinds.
-    type:
-      node.kind === ts.SyntaxKind.SourceFile
-        ? ASTNodeTypes.Document
-        : node.kind === ts.SyntaxKind.JsxText
-        ? ASTNodeTypes.Str
-        : ASTNodeTypes.Html,
+  const range: [number, number] = [node.pos, node.end];
+  const txtPartialNode = {
     raw: node.getText(),
-    range: [node.pos, node.end],
+    range,
     loc: {
       start: {
         column: startLineAndCharacter.character,
@@ -49,8 +47,38 @@ const jsxToAST = (node: ts.Node): TxtParentNode => {
         line: endLineAndCharacter.line + 1,
       },
     },
-    children,
   };
+
+  // TODO: Implement map for all SyntaxKinds.
+  switch (node.kind) {
+    case ts.SyntaxKind.SourceFile: {
+      const txtNode: TxtParentNode = {
+        ...txtPartialNode,
+        type: ASTNodeTypes.Document,
+        children,
+      };
+
+      return txtNode;
+    }
+    case ts.SyntaxKind.JsxText: {
+      const txtNode: TxtTextNode = {
+        ...txtPartialNode,
+        type: ASTNodeTypes.Str,
+        value: node.getText(),
+      };
+
+      return txtNode;
+    }
+    default: {
+      const txtNode: TxtParentNode = {
+        ...txtPartialNode,
+        type: ASTNodeTypes.HtmlBlock,
+        children,
+      };
+
+      return txtNode;
+    }
+  }
 };
 
 class JSXProcessor implements TextlintPluginProcessor {
@@ -74,7 +102,7 @@ class JSXProcessor implements TextlintPluginProcessor {
           true
         );
 
-        return jsxToAST(sourceFile);
+        return jsxToAST(sourceFile) as TxtParentNode;
       },
       postProcess(messages: any[], filePath?: string) {
         return {
