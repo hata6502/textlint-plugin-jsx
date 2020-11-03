@@ -51,6 +51,7 @@ var jsxToAST = function (node) {
             },
         },
     };
+    //console.log(ts.SyntaxKind[node.kind], node.getText())
     // TODO: Implement map for all SyntaxKinds.
     switch (node.kind) {
         case ts.SyntaxKind.SourceFile: {
@@ -58,6 +59,10 @@ var jsxToAST = function (node) {
             return txtNode;
         }
         case ts.SyntaxKind.JsxText: {
+            var txtNode = __assign(__assign({}, txtPartialNode), { type: ast_node_types_1.ASTNodeTypes.Str, value: node.getText() });
+            return txtNode;
+        }
+        case ts.SyntaxKind.StringLiteral: {
             var txtNode = __assign(__assign({}, txtPartialNode), { type: ast_node_types_1.ASTNodeTypes.Str, value: node.getText() });
             return txtNode;
         }
