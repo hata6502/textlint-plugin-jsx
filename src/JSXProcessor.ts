@@ -69,6 +69,15 @@ const jsxToAST = (node: ts.Node) => {
 
       return txtNode;
     }
+    case ts.SyntaxKind.StringLiteral: {
+      const txtNode: TxtTextNode = {
+        ...txtPartialNode,
+        type: ASTNodeTypes.Str,
+        value: node.getText(),
+      };
+
+      return txtNode;
+    }
     default: {
       const txtNode: TxtParentNode = {
         ...txtPartialNode,
