@@ -51,7 +51,6 @@ var jsxToAST = function (node) {
             },
         },
     };
-    //console.log(ts.SyntaxKind[node.kind], node.getText())
     // TODO: Implement map for all SyntaxKinds.
     switch (node.kind) {
         case ts.SyntaxKind.SourceFile: {
