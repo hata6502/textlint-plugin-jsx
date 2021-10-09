@@ -1,6 +1,6 @@
 {
   "name": "textlint-plugin-jsx",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "JSX and TSX support for textlint. ",
   "keywords": [
     "textlintplugin"
@@ -14,19 +14,20 @@
   "author": "Hood <hato6502@gmail.com>",
   "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
     "fix": "prettier --write .",
-    "generate-disclaimer": "yarn licenses generate-disclaimer --ignore-platform > DISCLAIMER.md",
-    "license-checker": "license-checker --excludePackages 'css-select@1.2.0;dictionary-en@3.0.0;domutils@1.5.1;optimist@0.6.1;tiny-segmenter@0.2.0;trim@0.0.1;union@0.5.0;unorm@1.6.0;zlibjs@0.2.0' --excludePrivatePackages --onlyAllow 'Apache-2.0;BSD;BSD-2-Clause;BSD-3-Clause;CC0-1.0;CC-BY-3.0;CC-BY-4.0;ISC;MIT;Public Domain;Unlicense;WTFPL' --production --unknown > /dev/null",
-    "tsc": "tsc"
+    "test": "prettier --check . && tsc --noEmit"
   },
   "dependencies": {
-    "@textlint/ast-node-types": "^4.2.5",
-    "typescript": "^3.9.6"
+    "@textlint/ast-node-types": "^4.2.5"
   },
   "devDependencies": {
     "@textlint/types": "^1.3.1",
     "@types/node": "^14.0.22",
-    "license-checker": "^25.0.1",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.6"
+  },
+  "peerDependencies": {
+    "typescript": "*"
   }
 }
