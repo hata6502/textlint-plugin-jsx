@@ -16,7 +16,7 @@
 ## Install
 
 ```sh
-yarn add textlint-plugin-jsx
+npm i textlint-plugin-jsx
 ```
 
 ## Usage
