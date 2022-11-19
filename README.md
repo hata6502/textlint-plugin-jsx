@@ -1,11 +1,11 @@
 <h1 align="center">Welcome to textlint-plugin-jsx 👋</h1>
 <p>
   <img alt="npm" src="https://img.shields.io/npm/v/textlint-plugin-jsx" />
-  <a href="https://github.com/blue-hood/textlint-plugin-jsx/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/hata6502/textlint-plugin-jsx/blob/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
-  <a href="https://lgtm.com/projects/g/blue-hood/textlint-plugin-jsx/alerts/"><img alt="Total alerts" src="https://img.shields.io/lgtm/alerts/g/blue-hood/textlint-plugin-jsx.svg?logo=lgtm&logoWidth=18"/></a>
-  <a href="https://lgtm.com/projects/g/blue-hood/textlint-plugin-jsx/context:javascript"><img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/blue-hood/textlint-plugin-jsx.svg?logo=lgtm&logoWidth=18"/></a>
+  <a href="https://lgtm.com/projects/g/hata6502/textlint-plugin-jsx/alerts/"><img alt="Total alerts" src="https://img.shields.io/lgtm/alerts/g/hata6502/textlint-plugin-jsx.svg?logo=lgtm&logoWidth=18"/></a>
+  <a href="https://lgtm.com/projects/g/hata6502/textlint-plugin-jsx/context:javascript"><img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/hata6502/textlint-plugin-jsx.svg?logo=lgtm&logoWidth=18"/></a>
   <a href="https://twitter.com/hata6502" target="_blank">
     <img alt="Twitter: hata6502" src="https://img.shields.io/twitter/follow/hata6502.svg?style=social" />
   </a>
@@ -42,17 +42,17 @@ yarn add textlint-plugin-jsx
 ## Author
 
 <p>
-  <img alt="Hood" src="https://avatars.githubusercontent.com/blue-hood" width="48" />
-  <b>Hood &lt;hato6502@gmail.com&gt;</b>
+  <img alt="Tomoyuki Hata" src="https://avatars.githubusercontent.com/hata6502" width="48" />
+  <b>Tomoyuki Hata &lt;hato6502@gmail.com&gt;</b>
 </p>
 
-- Website: https://b-hood.site/
+- Website: https://scrapbox.io/hata6502A/
 - Twitter: [@hata6502](https://twitter.com/hata6502)
 - Github: [@hata6502](https://github.com/hata6502)
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/blue-hood/textlint-plugin-jsx/issues).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/hata6502/textlint-plugin-jsx/issues).
 
 ## Show your support
 
@@ -60,12 +60,12 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2020 [Hood <hato6502@gmail.com>](https://github.com/hata6502).<br />
-This project is [MIT](https://github.com/blue-hood/textlint-plugin-jsx/blob/master/LICENSE) licensed.
+Copyright © 2020 [Tomoyuki Hata <hato6502@gmail.com>](https://github.com/hata6502).<br />
+This project is [MIT](https://github.com/hata6502/textlint-plugin-jsx/blob/master/LICENSE) licensed.
 
 ## Disclaimer
 
-Please see [DISCLAIMER.md](https://github.com/blue-hood/textlint-plugin-jsx/blob/master/DISCLAIMER.md).
+Please see [DISCLAIMER.md](https://github.com/hata6502/textlint-plugin-jsx/blob/master/DISCLAIMER.md).
 
 ---
 
