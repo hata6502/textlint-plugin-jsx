@@ -10,6 +10,42 @@ import type {
 } from '@textlint/types';
 import * as ts from 'typescript';
 
+const extractCommentNodes = (node: ts.Node): TxtNode[] => {
+  const commentRanges = ts.getLeadingCommentRanges(node.getSourceFile().getFullText(), node.pos);
+
+  if (commentRanges?.length) {
+    return commentRanges.map((range) => {
+      const text = node.getSourceFile().getFullText().slice(range.pos, range.end)
+      const start = ts.getLineAndCharacterOfPosition(node.getSourceFile(), range.pos)
+      const end = ts.getLineAndCharacterOfPosition(node.getSourceFile(), range.end)
+      let comment: string = text
+
+      if (text.startsWith("//")) {
+        comment = text.replace(/^\/\//, '')
+      }
+
+      return {
+        raw: text,
+        range: [range.pos, range.end],
+        type: ASTNodeTypes.Comment,
+        value: comment,
+        loc: {
+          start: {
+            column: start.character,
+            line: start.line + 1,
+          },
+          end: {
+            column: end.character,
+            line: end.line + 1,
+          },
+        },
+      };
+    })
+  }
+
+  return []
+}
+
 const jsxToAST = (node: ts.Node) => {
   const startLineAndCharacter = node
     .getSourceFile()
@@ -19,6 +55,8 @@ const jsxToAST = (node: ts.Node) => {
     .getLineAndCharacterOfPosition(node.end);
 
   const children: TxtNode[] = [];
+
+  children.push(...extractCommentNodes(node))
 
   node.forEachChild((child) => {
     const txtChildNode = jsxToAST(child);
