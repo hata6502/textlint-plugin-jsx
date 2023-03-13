@@ -55,5 +55,21 @@ describe('processor()', () => {
       );
       assert.strictEqual(lineComment?.value, ' line-comment');
     });
+
+    it('returns AST that passed isTxtAST multiline_comment.ts', () => {
+      const script = fs.readFileSync(
+        path.join(__dirname, 'fixtures/multiline_comment.ts'),
+        'utf-8'
+      );
+      const AST = preProcess(script);
+      test(AST);
+
+      const nodes = getNodes(AST);
+      const lineComment = nodes.find(
+        (node) =>
+          node.type === ASTNodeTypes.Comment && /multiline-comment/.test(node.value)
+      );
+      assert.strictEqual(lineComment?.value, '\n multiline-comment\n ');
+    });
   });
 });

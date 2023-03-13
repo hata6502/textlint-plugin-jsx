@@ -34,6 +34,8 @@ const extractCommentNodes = (node: ts.Node): TxtNode[] => {
 
       if (text.startsWith('//')) {
         comment = text.replace(/^\/\//, '');
+      } else if (text.startsWith('/*')) {
+        comment = text.replace(/^\/\*/, '').replace(/\*\/$/, '')
       }
 
       return {
