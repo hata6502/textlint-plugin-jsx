@@ -16,49 +16,56 @@ const extractCommentNodes = (node: ts.Node): TxtNode[] => {
     node.pos
   );
 
-  if (commentRanges?.length) {
-    return commentRanges.map((range) => {
-      const text = node
-        .getSourceFile()
-        .getFullText()
-        .slice(range.pos, range.end);
-      const start = ts.getLineAndCharacterOfPosition(
-        node.getSourceFile(),
-        range.pos
-      );
-      const end = ts.getLineAndCharacterOfPosition(
-        node.getSourceFile(),
-        range.end
-      );
-      let comment: string = text;
-
-      if (text.startsWith('//')) {
-        comment = text.replace(/^\/\//, '');
-      } else if (text.startsWith('/*')) {
-        comment = text.replace(/^\/\*/, '').replace(/\*\/$/, '')
-      }
-
-      return {
-        raw: text,
-        range: [range.pos, range.end],
-        type: ASTNodeTypes.Comment,
-        value: comment,
-        loc: {
-          start: {
-            column: start.character,
-            line: start.line + 1,
-          },
-          end: {
-            column: end.character,
-            line: end.line + 1,
-          },
-        },
-      };
-    });
+  if (!commentRanges) {
+    return [];
   }
 
-  return [];
+  return commentRanges.map((range) => {
+    const text = node
+      .getSourceFile()
+      .getFullText()
+      .slice(range.pos, range.end);
+    const start = ts.getLineAndCharacterOfPosition(
+      node.getSourceFile(),
+      range.pos
+    );
+    const end = ts.getLineAndCharacterOfPosition(
+      node.getSourceFile(),
+      range.end
+    );
+    let comment: string = text;
+
+    if (text.startsWith('//')) {
+      // single line comment
+      comment = text.replace(/^\/\//, '');
+    } else if (text.startsWith('/*')) {
+      // multi line comment
+      comment = text.replace(/^\/\*/, '').replace(/\*\/$/, '');
+    }
+
+    return {
+      raw: text,
+      range: [range.pos, range.end],
+      type: ASTNodeTypes.Comment,
+      value: comment,
+      loc: {
+        start: {
+          column: start.character,
+          line: start.line + 1,
+        },
+        end: {
+          column: end.character,
+          line: end.line + 1,
+        },
+      },
+    };
+  });
 };
+
+// A list of ts.SyntaxKind that the parsing of comments at the parent node is skipped. Comments should be parsed at the child node.
+const ignoredCommentKinds = [
+  ts.SyntaxKind.SourceFile,
+]
 
 const jsxToAST = (node: ts.Node) => {
   const startLineAndCharacter = node
@@ -70,7 +77,9 @@ const jsxToAST = (node: ts.Node) => {
 
   const children: TxtNode[] = [];
 
-  children.push(...extractCommentNodes(node));
+  if (!ignoredCommentKinds.includes(node.kind)) {
+    children.push(...extractCommentNodes(node));
+  }
 
   node.forEachChild((child) => {
     const txtChildNode = jsxToAST(child);

@@ -1,8 +1,9 @@
-import fs from 'fs';
+// FIXME: When using `import fs from "fs"`, raising the error of `Could not statically evaluate how the fs module was required/imported`.
+const fs = require('fs');
+
 import path from 'path';
 import { test } from '@textlint/ast-tester';
 import JSXProcessor from '../src/JSXProcessor';
-import { ASTNodeTypes, TxtNode, TxtParentNode } from '@textlint/ast-node-types';
 import assert from 'assert';
 
 describe('processor()', () => {
@@ -10,66 +11,60 @@ describe('processor()', () => {
   const { preProcess } = processor.processor();
 
   describe('preProcess()', () => {
-    function getNodes(
-      node: TxtParentNode | TxtNode,
-      collection: TxtNode[] = []
-    ): TxtNode[] {
-      collection.push(node);
+    function findInputFile(dir: string): string {
+      const exts = ['ts', 'js', 'tsx', 'jsx'];
+      const candidates = exts.map((ext) => path.join(dir, `input.${ext}`));
 
-      if ('children' in node) {
-        for (let i = 0; i < node.children.length; i++) {
-          getNodes(node.children[i], collection);
+      for (const candidate of candidates) {
+        if (fs.existsSync(candidate)) {
+          return candidate;
         }
       }
 
-      return collection;
+      throw new Error(`${dir}/input.(${exts.join('|')}) file not found`);
     }
 
-    it('returns AST that passed isTxtAST string.ts', () => {
-      const script = fs.readFileSync(
-        path.join(__dirname, 'fixtures/string.ts'),
-        'utf-8'
-      );
-      const AST = preProcess(script);
-      test(AST);
+    const fixturesDir = path.join(__dirname, 'snapshots');
+    fs.readdirSync(fixturesDir).map((caseName: string) => {
+      const normalizedTestName = caseName.replace(/-/g, ' ');
+      describe(`Test ${normalizedTestName}`, function () {
+        it('returns expected AST', function () {
+          const fixtureDir = path.join(fixturesDir, caseName);
+          const actualFilePath = findInputFile(fixtureDir);
+          const actualContent = fs.readFileSync(actualFilePath, 'utf-8');
+          const actual = preProcess(actualContent);
+          const expectedFilePath = path.join(fixtureDir, 'output.json');
 
-      const nodes = getNodes(AST);
-      const foundStr = nodes.some(
-        (node) => node.type === ASTNodeTypes.Str && /str/.test(node.value)
-      );
-      assert(foundStr);
-    });
+          // Usage: update snapshots
+          // UPDATE_SNAPSHOT=1 npm test
+          if (
+            !fs.existsSync(expectedFilePath) ||
+            process.env.UPDATE_SNAPSHOT === '1'
+          ) {
+            if (fs.existsSync(expectedFilePath)) {
+              fs.rmSync(expectedFilePath);
+            }
 
-    it('returns AST that passed isTxtAST line_comment.ts', () => {
-      const script = fs.readFileSync(
-        path.join(__dirname, 'fixtures/line_comment.ts'),
-        'utf-8'
-      );
-      const AST = preProcess(script);
-      test(AST);
+            fs.writeFileSync(expectedFilePath, JSON.stringify(actual, null, 2));
+            this.skip(); // skip when updating snapshots
+          } else {
+            // compare input and output
+            const expected = JSON.parse(
+              fs.readFileSync(expectedFilePath, 'utf-8')
+            );
+            assert.deepStrictEqual(actual, expected);
+          }
+        });
 
-      const nodes = getNodes(AST);
-      const lineComment = nodes.find(
-        (node) =>
-          node.type === ASTNodeTypes.Comment && /line-comment/.test(node.value)
-      );
-      assert.strictEqual(lineComment?.value, ' line-comment');
-    });
+        it('returns AST that passed isTxtAST', function () {
+          const fixtureDir = path.join(fixturesDir, caseName);
+          const actualFilePath = findInputFile(fixtureDir);
+          const actualContent = fs.readFileSync(actualFilePath, 'utf-8');
+          const actual = preProcess(actualContent);
 
-    it('returns AST that passed isTxtAST multiline_comment.ts', () => {
-      const script = fs.readFileSync(
-        path.join(__dirname, 'fixtures/multiline_comment.ts'),
-        'utf-8'
-      );
-      const AST = preProcess(script);
-      test(AST);
-
-      const nodes = getNodes(AST);
-      const lineComment = nodes.find(
-        (node) =>
-          node.type === ASTNodeTypes.Comment && /multiline-comment/.test(node.value)
-      );
-      assert.strictEqual(lineComment?.value, '\n multiline-comment\n ');
+          test(actual);
+        });
+      });
     });
   });
 });

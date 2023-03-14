@@ -54,6 +54,20 @@ npm i textlint-plugin-jsx
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/hata6502/textlint-plugin-jsx/issues).
 
+### Run test
+
+Run all tests.
+
+```
+yarn run test
+```
+
+Update snapshots.
+
+```
+UPDATE_SNAPSHOT=1 yarn run test
+```
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!
