@@ -1,0 +1,255 @@
+{
+  "raw": "{\n  // comment-nest-1\n  nest: {\n    // comment-nest-2\n    value: \"str\"\n  }\n}\n",
+  "range": [
+    0,
+    77
+  ],
+  "loc": {
+    "start": {
+      "column": 0,
+      "line": 1
+    },
+    "end": {
+      "column": 0,
+      "line": 8
+    }
+  },
+  "type": "Document",
+  "children": [
+    {
+      "raw": "{\n  // comment-nest-1\n  nest: {\n    // comment-nest-2\n    value: \"str\"\n  }\n}",
+      "range": [
+        0,
+        76
+      ],
+      "loc": {
+        "start": {
+          "column": 0,
+          "line": 1
+        },
+        "end": {
+          "column": 1,
+          "line": 7
+        }
+      },
+      "type": "HtmlBlock",
+      "children": [
+        {
+          "raw": "nest: {\n    // comment-nest-2\n    value: \"str\"\n  }",
+          "range": [
+            1,
+            74
+          ],
+          "loc": {
+            "start": {
+              "column": 1,
+              "line": 1
+            },
+            "end": {
+              "column": 3,
+              "line": 6
+            }
+          },
+          "type": "HtmlBlock",
+          "children": [
+            {
+              "raw": "// comment-nest-1",
+              "range": [
+                4,
+                21
+              ],
+              "type": "Comment",
+              "value": " comment-nest-1",
+              "loc": {
+                "start": {
+                  "column": 2,
+                  "line": 2
+                },
+                "end": {
+                  "column": 19,
+                  "line": 2
+                }
+              }
+            },
+            {
+              "raw": "nest",
+              "range": [
+                1,
+                28
+              ],
+              "loc": {
+                "start": {
+                  "column": 1,
+                  "line": 1
+                },
+                "end": {
+                  "column": 6,
+                  "line": 3
+                }
+              },
+              "type": "HtmlBlock",
+              "children": [
+                {
+                  "raw": "// comment-nest-1",
+                  "range": [
+                    4,
+                    21
+                  ],
+                  "type": "Comment",
+                  "value": " comment-nest-1",
+                  "loc": {
+                    "start": {
+                      "column": 2,
+                      "line": 2
+                    },
+                    "end": {
+                      "column": 19,
+                      "line": 2
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "raw": "{\n    // comment-nest-2\n    value: \"str\"\n  }",
+              "range": [
+                29,
+                74
+              ],
+              "loc": {
+                "start": {
+                  "column": 7,
+                  "line": 3
+                },
+                "end": {
+                  "column": 3,
+                  "line": 6
+                }
+              },
+              "type": "HtmlBlock",
+              "children": [
+                {
+                  "raw": "value: \"str\"",
+                  "range": [
+                    31,
+                    70
+                  ],
+                  "loc": {
+                    "start": {
+                      "column": 9,
+                      "line": 3
+                    },
+                    "end": {
+                      "column": 16,
+                      "line": 5
+                    }
+                  },
+                  "type": "HtmlBlock",
+                  "children": [
+                    {
+                      "raw": "// comment-nest-2",
+                      "range": [
+                        36,
+                        53
+                      ],
+                      "type": "Comment",
+                      "value": " comment-nest-2",
+                      "loc": {
+                        "start": {
+                          "column": 4,
+                          "line": 4
+                        },
+                        "end": {
+                          "column": 21,
+                          "line": 4
+                        }
+                      }
+                    },
+                    {
+                      "raw": "value",
+                      "range": [
+                        31,
+                        63
+                      ],
+                      "loc": {
+                        "start": {
+                          "column": 9,
+                          "line": 3
+                        },
+                        "end": {
+                          "column": 9,
+                          "line": 5
+                        }
+                      },
+                      "type": "HtmlBlock",
+                      "children": [
+                        {
+                          "raw": "// comment-nest-2",
+                          "range": [
+                            36,
+                            53
+                          ],
+                          "type": "Comment",
+                          "value": " comment-nest-2",
+                          "loc": {
+                            "start": {
+                              "column": 4,
+                              "line": 4
+                            },
+                            "end": {
+                              "column": 21,
+                              "line": 4
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": "\"str\"",
+                      "range": [
+                        64,
+                        70
+                      ],
+                      "loc": {
+                        "start": {
+                          "column": 10,
+                          "line": 5
+                        },
+                        "end": {
+                          "column": 16,
+                          "line": 5
+                        }
+                      },
+                      "type": "HtmlBlock",
+                      "children": [
+                        {
+                          "raw": "\"str\"",
+                          "range": [
+                            64,
+                            70
+                          ],
+                          "loc": {
+                            "start": {
+                              "column": 10,
+                              "line": 5
+                            },
+                            "end": {
+                              "column": 16,
+                              "line": 5
+                            }
+                          },
+                          "type": "Str",
+                          "value": "\"str\""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
