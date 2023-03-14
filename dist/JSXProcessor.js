@@ -28,10 +28,7 @@ var extractCommentNodes = function (node) {
         return [];
     }
     return commentRanges.map(function (range) {
-        var text = node
-            .getSourceFile()
-            .getFullText()
-            .slice(range.pos, range.end);
+        var text = node.getSourceFile().getFullText().slice(range.pos, range.end);
         var start = ts.getLineAndCharacterOfPosition(node.getSourceFile(), range.pos);
         var end = ts.getLineAndCharacterOfPosition(node.getSourceFile(), range.end);
         var comment = text;
@@ -62,9 +59,7 @@ var extractCommentNodes = function (node) {
     });
 };
 // A list of ts.SyntaxKind that the parsing of comments at the parent node is skipped. Comments should be parsed at the child node.
-var ignoredCommentKinds = [
-    ts.SyntaxKind.SourceFile,
-];
+var ignoredCommentKinds = [ts.SyntaxKind.SourceFile];
 var jsxToAST = function (node) {
     var startLineAndCharacter = node
         .getSourceFile()

@@ -23,7 +23,6 @@
     "@textlint/ast-node-types": "^4.2.5"
   },
   "devDependencies": {
-    "@textlint/ast-tester": "^13.3.1",
     "@textlint/types": "^1.3.1",
     "@types/mocha": "^10.0.1",
     "@types/node": "^14.0.22",
