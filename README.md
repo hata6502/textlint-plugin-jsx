@@ -59,13 +59,13 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 Run all tests.
 
 ```
-yarn run test
+npm test
 ```
 
 Update snapshots.
 
 ```
-UPDATE_SNAPSHOT=1 yarn run test
+UPDATE_SNAPSHOT=1 npm test
 ```
 
 ## Show your support
