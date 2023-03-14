@@ -21,10 +21,7 @@ const extractCommentNodes = (node: ts.Node): TxtNode[] => {
   }
 
   return commentRanges.map((range) => {
-    const text = node
-      .getSourceFile()
-      .getFullText()
-      .slice(range.pos, range.end);
+    const text = node.getSourceFile().getFullText().slice(range.pos, range.end);
     const start = ts.getLineAndCharacterOfPosition(
       node.getSourceFile(),
       range.pos
@@ -63,9 +60,7 @@ const extractCommentNodes = (node: ts.Node): TxtNode[] => {
 };
 
 // A list of ts.SyntaxKind that the parsing of comments at the parent node is skipped. Comments should be parsed at the child node.
-const ignoredCommentKinds = [
-  ts.SyntaxKind.SourceFile,
-]
+const ignoredCommentKinds = [ts.SyntaxKind.SourceFile];
 
 const jsxToAST = (node: ts.Node) => {
   const startLineAndCharacter = node
