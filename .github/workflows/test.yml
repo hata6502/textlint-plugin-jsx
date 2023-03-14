@@ -1,0 +1,23 @@
+name: Lint Code Base
+on:
+  push:
+    branches-ignore: [master]
+  pull_request:
+    branches: [master]
+jobs:
+  build:
+    name: Test Code Base
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: yarn install
+      - name: Run test
+        run: yarn run test

@@ -10,16 +10,56 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var ast_node_types_1 = require("@textlint/ast-node-types");
 var ts = require("typescript");
+var extractCommentNodes = function (node) {
+    var commentRanges = ts.getLeadingCommentRanges(node.getSourceFile().getFullText(), node.pos);
+    if (!commentRanges) {
+        return [];
+    }
+    return commentRanges.map(function (range) {
+        var text = node.getSourceFile().getFullText().slice(range.pos, range.end);
+        var start = ts.getLineAndCharacterOfPosition(node.getSourceFile(), range.pos);
+        var end = ts.getLineAndCharacterOfPosition(node.getSourceFile(), range.end);
+        var comment = text;
+        if (text.startsWith('//')) {
+            // single line comment
+            comment = text.replace(/^\/\//, '');
+        }
+        else if (text.startsWith('/*')) {
+            // multi line comment
+            comment = text.replace(/^\/\*/, '').replace(/\*\/$/, '');
+        }
+        return {
+            raw: text,
+            range: [range.pos, range.end],
+            type: ast_node_types_1.ASTNodeTypes.Comment,
+            value: comment,
+            loc: {
+                start: {
+                    column: start.character,
+                    line: start.line + 1,
+                },
+                end: {
+                    column: end.character,
+                    line: end.line + 1,
+                },
+            },
+        };
+    });
+};
+// A list of ts.SyntaxKind that the parsing of comments at the parent node is skipped. Comments should be parsed at the child node.
+var ignoredCommentKinds = [ts.SyntaxKind.SourceFile];
 var jsxToAST = function (node) {
     var startLineAndCharacter = node
         .getSourceFile()
@@ -28,6 +68,9 @@ var jsxToAST = function (node) {
         .getSourceFile()
         .getLineAndCharacterOfPosition(node.end);
     var children = [];
+    if (!ignoredCommentKinds.includes(node.kind)) {
+        children.push.apply(children, extractCommentNodes(node));
+    }
     node.forEachChild(function (child) {
         var txtChildNode = jsxToAST(child);
         if (txtChildNode.type !== ast_node_types_1.ASTNodeTypes.Str &&
@@ -77,7 +120,7 @@ var JSXProcessor = /** @class */ (function () {
         this.extensions = (_a = options === null || options === void 0 ? void 0 : options.extensions) !== null && _a !== void 0 ? _a : [];
     }
     JSXProcessor.prototype.availableExtensions = function () {
-        return __spreadArrays(['.jsx', '.tsx'], this.extensions);
+        return __spreadArray(['.jsx', '.tsx'], this.extensions, true);
     };
     JSXProcessor.prototype.processor = function () {
         return {

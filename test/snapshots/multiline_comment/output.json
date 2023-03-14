@@ -1,0 +1,59 @@
+{
+  "raw": "",
+  "range": [
+    0,
+    26
+  ],
+  "loc": {
+    "start": {
+      "column": 0,
+      "line": 1
+    },
+    "end": {
+      "column": 0,
+      "line": 4
+    }
+  },
+  "type": "Document",
+  "children": [
+    {
+      "raw": "",
+      "range": [
+        0,
+        26
+      ],
+      "loc": {
+        "start": {
+          "column": 0,
+          "line": 1
+        },
+        "end": {
+          "column": 0,
+          "line": 4
+        }
+      },
+      "type": "HtmlBlock",
+      "children": [
+        {
+          "raw": "/*\n multiline-comment\n */",
+          "range": [
+            0,
+            25
+          ],
+          "type": "Comment",
+          "value": "\n multiline-comment\n ",
+          "loc": {
+            "start": {
+              "column": 0,
+              "line": 1
+            },
+            "end": {
+              "column": 3,
+              "line": 3
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
