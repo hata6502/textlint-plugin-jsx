@@ -50,7 +50,7 @@ describe("processor()", () => {
           } else {
             // compare input and output
             const expected = JSON.parse(
-              fs.readFileSync(expectedFilePath, "utf-8")
+              fs.readFileSync(expectedFilePath, "utf-8"),
             );
             assert.deepStrictEqual(actual, expected);
           }

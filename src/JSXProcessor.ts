@@ -13,7 +13,7 @@ import * as ts from "typescript";
 const extractCommentNodes = (node: ts.Node): TxtNode[] => {
   const commentRanges = ts.getLeadingCommentRanges(
     node.getSourceFile().getFullText(),
-    node.pos
+    node.pos,
   );
 
   if (!commentRanges) {
@@ -24,13 +24,13 @@ const extractCommentNodes = (node: ts.Node): TxtNode[] => {
     const text = node.getSourceFile().getFullText().slice(range.pos, range.end);
     const start = ts.getLineAndCharacterOfPosition(
       node.getSourceFile(),
-      range.pos
+      range.pos,
     );
     const end = ts.getLineAndCharacterOfPosition(
       node.getSourceFile(),
-      range.end
+      range.end,
     );
-    let comment: string = text;
+    let comment = text;
 
     if (text.startsWith("//")) {
       // single line comment
@@ -108,40 +108,35 @@ const jsxToAST = (node: ts.Node) => {
   // TODO: Implement map for all SyntaxKinds.
   switch (node.kind) {
     case ts.SyntaxKind.SourceFile: {
-      const txtNode: TxtParentNode = {
+      return {
         ...txtPartialNode,
         type: ASTNodeTypes.Document,
         children,
-      };
-
-      return txtNode;
+      } satisfies TxtParentNode;
     }
+
     case ts.SyntaxKind.JsxText: {
-      const txtNode: TxtTextNode = {
+      return {
         ...txtPartialNode,
         type: ASTNodeTypes.Str,
         value: node.getText(),
-      };
-
-      return txtNode;
+      } satisfies TxtTextNode;
     }
+
     case ts.SyntaxKind.StringLiteral: {
-      const txtNode: TxtTextNode = {
+      return {
         ...txtPartialNode,
         type: ASTNodeTypes.Str,
         value: node.getText(),
-      };
-
-      return txtNode;
+      } satisfies TxtTextNode;
     }
+
     default: {
-      const txtNode: TxtParentNode = {
+      return {
         ...txtPartialNode,
         type: ASTNodeTypes.HtmlBlock,
         children,
-      };
-
-      return txtNode;
+      } satisfies TxtParentNode;
     }
   }
 };
@@ -164,7 +159,7 @@ class JSXProcessor implements TextlintPluginProcessor {
           "foo.tsx",
           text,
           ts.ScriptTarget.Latest,
-          true
+          true,
         );
 
         return jsxToAST(sourceFile) as TxtParentNode;
