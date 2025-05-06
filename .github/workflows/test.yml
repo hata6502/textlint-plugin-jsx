@@ -1,22 +1,14 @@
-name: Lint Code Base
 on:
   push:
-  pull_request:
-    branches: [master]
+
 jobs:
-  build:
-    name: Test Code Base
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          fetch-depth: 0
-      - name: Setup NodeJS
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Install dependencies
-        run: npm ci
-      - name: Run test
-        run: npm test
+          node-version: 22
+
+      - run: npm ci
+      - run: npm test

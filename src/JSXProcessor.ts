@@ -1,14 +1,14 @@
-import { ASTNodeTypes } from '@textlint/ast-node-types';
+import { ASTNodeTypes } from "@textlint/ast-node-types";
 import type {
   TxtNode,
   TxtParentNode,
   TxtTextNode,
-} from '@textlint/ast-node-types';
+} from "@textlint/ast-node-types";
 import type {
   TextlintPluginOptions,
   TextlintPluginProcessor,
-} from '@textlint/types';
-import * as ts from 'typescript';
+} from "@textlint/types";
+import * as ts from "typescript";
 
 const extractCommentNodes = (node: ts.Node): TxtNode[] => {
   const commentRanges = ts.getLeadingCommentRanges(
@@ -32,12 +32,12 @@ const extractCommentNodes = (node: ts.Node): TxtNode[] => {
     );
     let comment: string = text;
 
-    if (text.startsWith('//')) {
+    if (text.startsWith("//")) {
       // single line comment
-      comment = text.replace(/^\/\//, '');
-    } else if (text.startsWith('/*')) {
+      comment = text.replace(/^\/\//, "");
+    } else if (text.startsWith("/*")) {
       // multi line comment
-      comment = text.replace(/^\/\*/, '').replace(/\*\/$/, '');
+      comment = text.replace(/^\/\*/, "").replace(/\*\/$/, "");
     }
 
     return {
@@ -154,14 +154,14 @@ class JSXProcessor implements TextlintPluginProcessor {
   }
 
   availableExtensions() {
-    return ['.jsx', '.tsx', ...this.extensions];
+    return [".jsx", ".tsx", ...this.extensions];
   }
 
   processor() {
     return {
       preProcess(text: string) {
         const sourceFile = ts.createSourceFile(
-          'foo.tsx',
+          "foo.tsx",
           text,
           ts.ScriptTarget.Latest,
           true
@@ -172,7 +172,7 @@ class JSXProcessor implements TextlintPluginProcessor {
       postProcess(messages: any[], filePath?: string) {
         return {
           messages,
-          filePath: filePath ?? '<jsx>',
+          filePath: filePath ?? "<jsx>",
         };
       },
     };

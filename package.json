@@ -16,8 +16,7 @@
   "scripts": {
     "build": "tsc",
     "fix": "prettier --write .",
-    "lint": "prettier --check . && tsc --noEmit",
-    "test": "textlint-scripts test"
+    "test": "prettier --check . && tsc --noEmit && textlint-scripts test"
   },
   "dependencies": {
     "@textlint/ast-node-types": "^4.2.5"
