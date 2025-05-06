@@ -79,10 +79,7 @@ const jsxToAST = (node: ts.Node) => {
   node.forEachChild((child) => {
     const txtChildNode = jsxToAST(child);
 
-    if (
-      txtChildNode.type !== ASTNodeTypes.Str &&
-      txtChildNode.children.length === 0
-    ) {
+    if ("children" in txtChildNode && !txtChildNode.children.length) {
       return;
     }
 
