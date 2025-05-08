@@ -62,6 +62,19 @@ const extractCommentNodes = (node: ts.Node): TxtNode[] => {
 // A list of ts.SyntaxKind that the parsing of comments at the parent node is skipped. Comments should be parsed at the child node.
 const ignoredCommentKinds = [ts.SyntaxKind.SourceFile];
 
+function trimQuotes(str: string): string {
+  if (str.length < 2) {
+    return str;
+  }
+  if (str[0] !== `"` && str[0] !== `'`) {
+    return str;
+  }
+  if (str[0] !== str[str.length - 1]) {
+    return str;
+  }
+  return str.slice(1, -1);
+}
+
 const jsxToAST = (node: ts.Node) => {
   const startLineAndCharacter = node
     .getSourceFile()
@@ -121,10 +134,15 @@ const jsxToAST = (node: ts.Node) => {
     }
 
     case ts.SyntaxKind.StringLiteral: {
+      let text = node.getText();
+      if (node.parent.kind === ts.SyntaxKind.JsxAttribute) {
+        text = trimQuotes(text);
+      }
+
       return {
         ...txtPartialNode,
         type: ASTNodeTypes.Str,
-        value: node.getText(),
+        value: text,
       } satisfies TxtTextNode;
     }
 
@@ -158,7 +176,6 @@ class JSXProcessor implements TextlintPluginProcessor {
           ts.ScriptTarget.Latest,
           true,
         );
-
         return jsxToAST(sourceFile) as TxtParentNode;
       },
       postProcess(messages: any[], filePath?: string) {

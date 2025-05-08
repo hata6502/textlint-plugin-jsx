@@ -1,0 +1,278 @@
+{
+  "raw": "export const Dialog = () => {\n  return (\n    <Dialog\n      text=\"Hello World\"\n      alt='Howdy, World'\n      />\n  );\n}\n",
+  "range": [
+    0,
+    119
+  ],
+  "loc": {
+    "start": {
+      "column": 0,
+      "line": 1
+    },
+    "end": {
+      "column": 0,
+      "line": 9
+    }
+  },
+  "type": "Document",
+  "children": [
+    {
+      "raw": "export const Dialog = () => {\n  return (\n    <Dialog\n      text=\"Hello World\"\n      alt='Howdy, World'\n      />\n  );\n}",
+      "range": [
+        0,
+        118
+      ],
+      "loc": {
+        "start": {
+          "column": 0,
+          "line": 1
+        },
+        "end": {
+          "column": 1,
+          "line": 8
+        }
+      },
+      "type": "HtmlBlock",
+      "children": [
+        {
+          "raw": "const Dialog = () => {\n  return (\n    <Dialog\n      text=\"Hello World\"\n      alt='Howdy, World'\n      />\n  );\n}",
+          "range": [
+            6,
+            118
+          ],
+          "loc": {
+            "start": {
+              "column": 6,
+              "line": 1
+            },
+            "end": {
+              "column": 1,
+              "line": 8
+            }
+          },
+          "type": "HtmlBlock",
+          "children": [
+            {
+              "raw": "Dialog = () => {\n  return (\n    <Dialog\n      text=\"Hello World\"\n      alt='Howdy, World'\n      />\n  );\n}",
+              "range": [
+                12,
+                118
+              ],
+              "loc": {
+                "start": {
+                  "column": 12,
+                  "line": 1
+                },
+                "end": {
+                  "column": 1,
+                  "line": 8
+                }
+              },
+              "type": "HtmlBlock",
+              "children": [
+                {
+                  "raw": "() => {\n  return (\n    <Dialog\n      text=\"Hello World\"\n      alt='Howdy, World'\n      />\n  );\n}",
+                  "range": [
+                    21,
+                    118
+                  ],
+                  "loc": {
+                    "start": {
+                      "column": 21,
+                      "line": 1
+                    },
+                    "end": {
+                      "column": 1,
+                      "line": 8
+                    }
+                  },
+                  "type": "HtmlBlock",
+                  "children": [
+                    {
+                      "raw": "{\n  return (\n    <Dialog\n      text=\"Hello World\"\n      alt='Howdy, World'\n      />\n  );\n}",
+                      "range": [
+                        27,
+                        118
+                      ],
+                      "loc": {
+                        "start": {
+                          "column": 27,
+                          "line": 1
+                        },
+                        "end": {
+                          "column": 1,
+                          "line": 8
+                        }
+                      },
+                      "type": "HtmlBlock",
+                      "children": [
+                        {
+                          "raw": "return (\n    <Dialog\n      text=\"Hello World\"\n      alt='Howdy, World'\n      />\n  );",
+                          "range": [
+                            29,
+                            116
+                          ],
+                          "loc": {
+                            "start": {
+                              "column": 29,
+                              "line": 1
+                            },
+                            "end": {
+                              "column": 4,
+                              "line": 7
+                            }
+                          },
+                          "type": "HtmlBlock",
+                          "children": [
+                            {
+                              "raw": "(\n    <Dialog\n      text=\"Hello World\"\n      alt='Howdy, World'\n      />\n  )",
+                              "range": [
+                                38,
+                                115
+                              ],
+                              "loc": {
+                                "start": {
+                                  "column": 8,
+                                  "line": 2
+                                },
+                                "end": {
+                                  "column": 3,
+                                  "line": 7
+                                }
+                              },
+                              "type": "HtmlBlock",
+                              "children": [
+                                {
+                                  "raw": "<Dialog\n      text=\"Hello World\"\n      alt='Howdy, World'\n      />",
+                                  "range": [
+                                    40,
+                                    111
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "column": 10,
+                                      "line": 2
+                                    },
+                                    "end": {
+                                      "column": 8,
+                                      "line": 6
+                                    }
+                                  },
+                                  "type": "HtmlBlock",
+                                  "children": [
+                                    {
+                                      "raw": "text=\"Hello World\"\n      alt='Howdy, World'",
+                                      "range": [
+                                        52,
+                                        102
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "column": 11,
+                                          "line": 3
+                                        },
+                                        "end": {
+                                          "column": 24,
+                                          "line": 5
+                                        }
+                                      },
+                                      "type": "HtmlBlock",
+                                      "children": [
+                                        {
+                                          "raw": "text=\"Hello World\"",
+                                          "range": [
+                                            52,
+                                            77
+                                          ],
+                                          "loc": {
+                                            "start": {
+                                              "column": 11,
+                                              "line": 3
+                                            },
+                                            "end": {
+                                              "column": 24,
+                                              "line": 4
+                                            }
+                                          },
+                                          "type": "HtmlBlock",
+                                          "children": [
+                                            {
+                                              "raw": "\"Hello World\"",
+                                              "range": [
+                                                64,
+                                                77
+                                              ],
+                                              "loc": {
+                                                "start": {
+                                                  "column": 11,
+                                                  "line": 4
+                                                },
+                                                "end": {
+                                                  "column": 24,
+                                                  "line": 4
+                                                }
+                                              },
+                                              "type": "Str",
+                                              "value": "Hello World"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "raw": "alt='Howdy, World'",
+                                          "range": [
+                                            77,
+                                            102
+                                          ],
+                                          "loc": {
+                                            "start": {
+                                              "column": 24,
+                                              "line": 4
+                                            },
+                                            "end": {
+                                              "column": 24,
+                                              "line": 5
+                                            }
+                                          },
+                                          "type": "HtmlBlock",
+                                          "children": [
+                                            {
+                                              "raw": "'Howdy, World'",
+                                              "range": [
+                                                88,
+                                                102
+                                              ],
+                                              "loc": {
+                                                "start": {
+                                                  "column": 10,
+                                                  "line": 5
+                                                },
+                                                "end": {
+                                                  "column": 24,
+                                                  "line": 5
+                                                }
+                                              },
+                                              "type": "Str",
+                                              "value": "Howdy, World"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
