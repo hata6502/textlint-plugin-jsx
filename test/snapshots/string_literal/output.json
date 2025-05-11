@@ -1,0 +1,317 @@
+{
+  "raw": "export const Dialog = () => {\n  const text = \"Hello World\";\n\n  // @ts-expect-error\n  return <Dialog\n    text={text}\n    alt=\"Howdy, World\"\n  />;\n};\n",
+  "range": [
+    0,
+    148
+  ],
+  "loc": {
+    "start": {
+      "column": 0,
+      "line": 1
+    },
+    "end": {
+      "column": 0,
+      "line": 10
+    }
+  },
+  "type": "Document",
+  "children": [
+    {
+      "raw": "export const Dialog = () => {\n  const text = \"Hello World\";\n\n  // @ts-expect-error\n  return <Dialog\n    text={text}\n    alt=\"Howdy, World\"\n  />;\n};",
+      "range": [
+        0,
+        147
+      ],
+      "loc": {
+        "start": {
+          "column": 0,
+          "line": 1
+        },
+        "end": {
+          "column": 2,
+          "line": 9
+        }
+      },
+      "type": "HtmlBlock",
+      "children": [
+        {
+          "raw": "const Dialog = () => {\n  const text = \"Hello World\";\n\n  // @ts-expect-error\n  return <Dialog\n    text={text}\n    alt=\"Howdy, World\"\n  />;\n}",
+          "range": [
+            6,
+            146
+          ],
+          "loc": {
+            "start": {
+              "column": 6,
+              "line": 1
+            },
+            "end": {
+              "column": 1,
+              "line": 9
+            }
+          },
+          "type": "HtmlBlock",
+          "children": [
+            {
+              "raw": "Dialog = () => {\n  const text = \"Hello World\";\n\n  // @ts-expect-error\n  return <Dialog\n    text={text}\n    alt=\"Howdy, World\"\n  />;\n}",
+              "range": [
+                12,
+                146
+              ],
+              "loc": {
+                "start": {
+                  "column": 12,
+                  "line": 1
+                },
+                "end": {
+                  "column": 1,
+                  "line": 9
+                }
+              },
+              "type": "HtmlBlock",
+              "children": [
+                {
+                  "raw": "() => {\n  const text = \"Hello World\";\n\n  // @ts-expect-error\n  return <Dialog\n    text={text}\n    alt=\"Howdy, World\"\n  />;\n}",
+                  "range": [
+                    21,
+                    146
+                  ],
+                  "loc": {
+                    "start": {
+                      "column": 21,
+                      "line": 1
+                    },
+                    "end": {
+                      "column": 1,
+                      "line": 9
+                    }
+                  },
+                  "type": "HtmlBlock",
+                  "children": [
+                    {
+                      "raw": "{\n  const text = \"Hello World\";\n\n  // @ts-expect-error\n  return <Dialog\n    text={text}\n    alt=\"Howdy, World\"\n  />;\n}",
+                      "range": [
+                        27,
+                        146
+                      ],
+                      "loc": {
+                        "start": {
+                          "column": 27,
+                          "line": 1
+                        },
+                        "end": {
+                          "column": 1,
+                          "line": 9
+                        }
+                      },
+                      "type": "HtmlBlock",
+                      "children": [
+                        {
+                          "raw": "const text = \"Hello World\";",
+                          "range": [
+                            29,
+                            59
+                          ],
+                          "loc": {
+                            "start": {
+                              "column": 29,
+                              "line": 1
+                            },
+                            "end": {
+                              "column": 29,
+                              "line": 2
+                            }
+                          },
+                          "type": "HtmlBlock",
+                          "children": [
+                            {
+                              "raw": "const text = \"Hello World\"",
+                              "range": [
+                                29,
+                                58
+                              ],
+                              "loc": {
+                                "start": {
+                                  "column": 29,
+                                  "line": 1
+                                },
+                                "end": {
+                                  "column": 28,
+                                  "line": 2
+                                }
+                              },
+                              "type": "HtmlBlock",
+                              "children": [
+                                {
+                                  "raw": "text = \"Hello World\"",
+                                  "range": [
+                                    37,
+                                    58
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "column": 7,
+                                      "line": 2
+                                    },
+                                    "end": {
+                                      "column": 28,
+                                      "line": 2
+                                    }
+                                  },
+                                  "type": "HtmlBlock",
+                                  "children": [
+                                    {
+                                      "raw": "\"Hello World\"",
+                                      "range": [
+                                        44,
+                                        58
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "column": 14,
+                                          "line": 2
+                                        },
+                                        "end": {
+                                          "column": 28,
+                                          "line": 2
+                                        }
+                                      },
+                                      "type": "Str",
+                                      "value": "Hello World"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "raw": "return <Dialog\n    text={text}\n    alt=\"Howdy, World\"\n  />;",
+                          "range": [
+                            59,
+                            144
+                          ],
+                          "loc": {
+                            "start": {
+                              "column": 29,
+                              "line": 2
+                            },
+                            "end": {
+                              "column": 5,
+                              "line": 8
+                            }
+                          },
+                          "type": "HtmlBlock",
+                          "children": [
+                            {
+                              "raw": "// @ts-expect-error",
+                              "range": [
+                                63,
+                                82
+                              ],
+                              "type": "Comment",
+                              "value": " @ts-expect-error",
+                              "loc": {
+                                "start": {
+                                  "column": 2,
+                                  "line": 4
+                                },
+                                "end": {
+                                  "column": 21,
+                                  "line": 4
+                                }
+                              }
+                            },
+                            {
+                              "raw": "<Dialog\n    text={text}\n    alt=\"Howdy, World\"\n  />",
+                              "range": [
+                                91,
+                                143
+                              ],
+                              "loc": {
+                                "start": {
+                                  "column": 8,
+                                  "line": 5
+                                },
+                                "end": {
+                                  "column": 4,
+                                  "line": 8
+                                }
+                              },
+                              "type": "HtmlBlock",
+                              "children": [
+                                {
+                                  "raw": "text={text}\n    alt=\"Howdy, World\"",
+                                  "range": [
+                                    99,
+                                    138
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "column": 16,
+                                      "line": 5
+                                    },
+                                    "end": {
+                                      "column": 22,
+                                      "line": 7
+                                    }
+                                  },
+                                  "type": "HtmlBlock",
+                                  "children": [
+                                    {
+                                      "raw": "alt=\"Howdy, World\"",
+                                      "range": [
+                                        115,
+                                        138
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "column": 15,
+                                          "line": 6
+                                        },
+                                        "end": {
+                                          "column": 22,
+                                          "line": 7
+                                        }
+                                      },
+                                      "type": "HtmlBlock",
+                                      "children": [
+                                        {
+                                          "raw": "\"Howdy, World\"",
+                                          "range": [
+                                            124,
+                                            138
+                                          ],
+                                          "loc": {
+                                            "start": {
+                                              "column": 8,
+                                              "line": 7
+                                            },
+                                            "end": {
+                                              "column": 22,
+                                              "line": 7
+                                            }
+                                          },
+                                          "type": "Str",
+                                          "value": "Howdy, World"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
