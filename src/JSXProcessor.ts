@@ -62,7 +62,7 @@ const extractCommentNodes = (node: ts.Node): TxtNode[] => {
 // A list of ts.SyntaxKind that the parsing of comments at the parent node is skipped. Comments should be parsed at the child node.
 const ignoredCommentKinds = [ts.SyntaxKind.SourceFile];
 
-function trimQuotes(str: string): string {
+const trimQuotes = (str: string) => {
   if (str.length < 2) {
     return str;
   }
@@ -73,7 +73,7 @@ function trimQuotes(str: string): string {
     return str;
   }
   return str.slice(1, -1);
-}
+};
 
 const jsxToAST = (node: ts.Node) => {
   const startLineAndCharacter = node
@@ -134,15 +134,10 @@ const jsxToAST = (node: ts.Node) => {
     }
 
     case ts.SyntaxKind.StringLiteral: {
-      let text = node.getText();
-      if (node.parent.kind === ts.SyntaxKind.JsxAttribute) {
-        text = trimQuotes(text);
-      }
-
       return {
         ...txtPartialNode,
         type: ASTNodeTypes.Str,
-        value: text,
+        value: trimQuotes(node.getText()),
       } satisfies TxtTextNode;
     }
 

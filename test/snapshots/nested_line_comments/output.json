@@ -239,7 +239,7 @@
                             }
                           },
                           "type": "Str",
-                          "value": "\"str\""
+                          "value": "str"
                         }
                       ]
                     }
