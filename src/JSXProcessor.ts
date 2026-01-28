@@ -66,12 +66,24 @@ const trimQuotes = (str: string) => {
   if (str.length < 2) {
     return str;
   }
-  if (str[0] !== `"` && str[0] !== `'`) {
+  if (str[0] !== `"` && str[0] !== `'` && str[0] !== "`") {
     return str;
   }
   if (str[0] !== str[str.length - 1]) {
     return str;
   }
+  return str.slice(1, -1);
+};
+
+const trimTemplateHead = (str: string) => {
+  return str.slice(1, -2);
+};
+
+const trimTemplateMiddle = (str: string) => {
+  return str.slice(1, -2);
+};
+
+const trimTemplateTail = (str: string) => {
   return str.slice(1, -1);
 };
 
@@ -133,11 +145,36 @@ const jsxToAST = (node: ts.Node) => {
       } satisfies TxtTextNode;
     }
 
-    case ts.SyntaxKind.StringLiteral: {
+    case ts.SyntaxKind.StringLiteral:
+    case ts.SyntaxKind.NoSubstitutionTemplateLiteral: {
       return {
         ...txtPartialNode,
         type: ASTNodeTypes.Str,
         value: trimQuotes(node.getText()),
+      } satisfies TxtTextNode;
+    }
+
+    case ts.SyntaxKind.TemplateHead: {
+      return {
+        ...txtPartialNode,
+        type: ASTNodeTypes.Str,
+        value: trimTemplateHead(node.getText()),
+      } satisfies TxtTextNode;
+    }
+
+    case ts.SyntaxKind.TemplateMiddle: {
+      return {
+        ...txtPartialNode,
+        type: ASTNodeTypes.Str,
+        value: trimTemplateMiddle(node.getText()),
+      } satisfies TxtTextNode;
+    }
+
+    case ts.SyntaxKind.TemplateTail: {
+      return {
+        ...txtPartialNode,
+        type: ASTNodeTypes.Str,
+        value: trimTemplateTail(node.getText()),
       } satisfies TxtTextNode;
     }
 
