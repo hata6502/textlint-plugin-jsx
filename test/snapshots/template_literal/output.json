@@ -1,0 +1,791 @@
+{
+  "raw": "export const Component = () => {\n  const simple = `Hello World`;\n\n  const name = \"Alice\";\n  const greeting = `Hello ${name}!`;\n\n  const age = 20;\n  const message = `Name: ${name}, Age: ${age} years old`;\n\n  return <div title={`Greeting: ${name}`}>{simple}</div>;\n};\n",
+  "range": [
+    0,
+    266
+  ],
+  "loc": {
+    "start": {
+      "column": 0,
+      "line": 1
+    },
+    "end": {
+      "column": 0,
+      "line": 12
+    }
+  },
+  "type": "Document",
+  "children": [
+    {
+      "raw": "export const Component = () => {\n  const simple = `Hello World`;\n\n  const name = \"Alice\";\n  const greeting = `Hello ${name}!`;\n\n  const age = 20;\n  const message = `Name: ${name}, Age: ${age} years old`;\n\n  return <div title={`Greeting: ${name}`}>{simple}</div>;\n};",
+      "range": [
+        0,
+        265
+      ],
+      "loc": {
+        "start": {
+          "column": 0,
+          "line": 1
+        },
+        "end": {
+          "column": 2,
+          "line": 11
+        }
+      },
+      "type": "HtmlBlock",
+      "children": [
+        {
+          "raw": "const Component = () => {\n  const simple = `Hello World`;\n\n  const name = \"Alice\";\n  const greeting = `Hello ${name}!`;\n\n  const age = 20;\n  const message = `Name: ${name}, Age: ${age} years old`;\n\n  return <div title={`Greeting: ${name}`}>{simple}</div>;\n}",
+          "range": [
+            6,
+            264
+          ],
+          "loc": {
+            "start": {
+              "column": 6,
+              "line": 1
+            },
+            "end": {
+              "column": 1,
+              "line": 11
+            }
+          },
+          "type": "HtmlBlock",
+          "children": [
+            {
+              "raw": "Component = () => {\n  const simple = `Hello World`;\n\n  const name = \"Alice\";\n  const greeting = `Hello ${name}!`;\n\n  const age = 20;\n  const message = `Name: ${name}, Age: ${age} years old`;\n\n  return <div title={`Greeting: ${name}`}>{simple}</div>;\n}",
+              "range": [
+                12,
+                264
+              ],
+              "loc": {
+                "start": {
+                  "column": 12,
+                  "line": 1
+                },
+                "end": {
+                  "column": 1,
+                  "line": 11
+                }
+              },
+              "type": "HtmlBlock",
+              "children": [
+                {
+                  "raw": "() => {\n  const simple = `Hello World`;\n\n  const name = \"Alice\";\n  const greeting = `Hello ${name}!`;\n\n  const age = 20;\n  const message = `Name: ${name}, Age: ${age} years old`;\n\n  return <div title={`Greeting: ${name}`}>{simple}</div>;\n}",
+                  "range": [
+                    24,
+                    264
+                  ],
+                  "loc": {
+                    "start": {
+                      "column": 24,
+                      "line": 1
+                    },
+                    "end": {
+                      "column": 1,
+                      "line": 11
+                    }
+                  },
+                  "type": "HtmlBlock",
+                  "children": [
+                    {
+                      "raw": "{\n  const simple = `Hello World`;\n\n  const name = \"Alice\";\n  const greeting = `Hello ${name}!`;\n\n  const age = 20;\n  const message = `Name: ${name}, Age: ${age} years old`;\n\n  return <div title={`Greeting: ${name}`}>{simple}</div>;\n}",
+                      "range": [
+                        30,
+                        264
+                      ],
+                      "loc": {
+                        "start": {
+                          "column": 30,
+                          "line": 1
+                        },
+                        "end": {
+                          "column": 1,
+                          "line": 11
+                        }
+                      },
+                      "type": "HtmlBlock",
+                      "children": [
+                        {
+                          "raw": "const simple = `Hello World`;",
+                          "range": [
+                            32,
+                            64
+                          ],
+                          "loc": {
+                            "start": {
+                              "column": 32,
+                              "line": 1
+                            },
+                            "end": {
+                              "column": 31,
+                              "line": 2
+                            }
+                          },
+                          "type": "HtmlBlock",
+                          "children": [
+                            {
+                              "raw": "const simple = `Hello World`",
+                              "range": [
+                                32,
+                                63
+                              ],
+                              "loc": {
+                                "start": {
+                                  "column": 32,
+                                  "line": 1
+                                },
+                                "end": {
+                                  "column": 30,
+                                  "line": 2
+                                }
+                              },
+                              "type": "HtmlBlock",
+                              "children": [
+                                {
+                                  "raw": "simple = `Hello World`",
+                                  "range": [
+                                    40,
+                                    63
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "column": 7,
+                                      "line": 2
+                                    },
+                                    "end": {
+                                      "column": 30,
+                                      "line": 2
+                                    }
+                                  },
+                                  "type": "HtmlBlock",
+                                  "children": [
+                                    {
+                                      "raw": "`Hello World`",
+                                      "range": [
+                                        49,
+                                        63
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "column": 16,
+                                          "line": 2
+                                        },
+                                        "end": {
+                                          "column": 30,
+                                          "line": 2
+                                        }
+                                      },
+                                      "type": "Str",
+                                      "value": "Hello World"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "raw": "const name = \"Alice\";",
+                          "range": [
+                            64,
+                            89
+                          ],
+                          "loc": {
+                            "start": {
+                              "column": 31,
+                              "line": 2
+                            },
+                            "end": {
+                              "column": 23,
+                              "line": 4
+                            }
+                          },
+                          "type": "HtmlBlock",
+                          "children": [
+                            {
+                              "raw": "const name = \"Alice\"",
+                              "range": [
+                                64,
+                                88
+                              ],
+                              "loc": {
+                                "start": {
+                                  "column": 31,
+                                  "line": 2
+                                },
+                                "end": {
+                                  "column": 22,
+                                  "line": 4
+                                }
+                              },
+                              "type": "HtmlBlock",
+                              "children": [
+                                {
+                                  "raw": "name = \"Alice\"",
+                                  "range": [
+                                    73,
+                                    88
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "column": 7,
+                                      "line": 4
+                                    },
+                                    "end": {
+                                      "column": 22,
+                                      "line": 4
+                                    }
+                                  },
+                                  "type": "HtmlBlock",
+                                  "children": [
+                                    {
+                                      "raw": "\"Alice\"",
+                                      "range": [
+                                        80,
+                                        88
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "column": 14,
+                                          "line": 4
+                                        },
+                                        "end": {
+                                          "column": 22,
+                                          "line": 4
+                                        }
+                                      },
+                                      "type": "Str",
+                                      "value": "Alice"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "raw": "const greeting = `Hello ${name}!`;",
+                          "range": [
+                            89,
+                            126
+                          ],
+                          "loc": {
+                            "start": {
+                              "column": 23,
+                              "line": 4
+                            },
+                            "end": {
+                              "column": 36,
+                              "line": 5
+                            }
+                          },
+                          "type": "HtmlBlock",
+                          "children": [
+                            {
+                              "raw": "const greeting = `Hello ${name}!`",
+                              "range": [
+                                89,
+                                125
+                              ],
+                              "loc": {
+                                "start": {
+                                  "column": 23,
+                                  "line": 4
+                                },
+                                "end": {
+                                  "column": 35,
+                                  "line": 5
+                                }
+                              },
+                              "type": "HtmlBlock",
+                              "children": [
+                                {
+                                  "raw": "greeting = `Hello ${name}!`",
+                                  "range": [
+                                    97,
+                                    125
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "column": 7,
+                                      "line": 5
+                                    },
+                                    "end": {
+                                      "column": 35,
+                                      "line": 5
+                                    }
+                                  },
+                                  "type": "HtmlBlock",
+                                  "children": [
+                                    {
+                                      "raw": "`Hello ${name}!`",
+                                      "range": [
+                                        108,
+                                        125
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "column": 18,
+                                          "line": 5
+                                        },
+                                        "end": {
+                                          "column": 35,
+                                          "line": 5
+                                        }
+                                      },
+                                      "type": "HtmlBlock",
+                                      "children": [
+                                        {
+                                          "raw": "`Hello ${",
+                                          "range": [
+                                            108,
+                                            118
+                                          ],
+                                          "loc": {
+                                            "start": {
+                                              "column": 18,
+                                              "line": 5
+                                            },
+                                            "end": {
+                                              "column": 28,
+                                              "line": 5
+                                            }
+                                          },
+                                          "type": "Str",
+                                          "value": "Hello "
+                                        },
+                                        {
+                                          "raw": "name}!`",
+                                          "range": [
+                                            118,
+                                            125
+                                          ],
+                                          "loc": {
+                                            "start": {
+                                              "column": 28,
+                                              "line": 5
+                                            },
+                                            "end": {
+                                              "column": 35,
+                                              "line": 5
+                                            }
+                                          },
+                                          "type": "HtmlBlock",
+                                          "children": [
+                                            {
+                                              "raw": "}!`",
+                                              "range": [
+                                                122,
+                                                125
+                                              ],
+                                              "loc": {
+                                                "start": {
+                                                  "column": 32,
+                                                  "line": 5
+                                                },
+                                                "end": {
+                                                  "column": 35,
+                                                  "line": 5
+                                                }
+                                              },
+                                              "type": "Str",
+                                              "value": "!"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "raw": "const message = `Name: ${name}, Age: ${age} years old`;",
+                          "range": [
+                            145,
+                            203
+                          ],
+                          "loc": {
+                            "start": {
+                              "column": 17,
+                              "line": 7
+                            },
+                            "end": {
+                              "column": 57,
+                              "line": 8
+                            }
+                          },
+                          "type": "HtmlBlock",
+                          "children": [
+                            {
+                              "raw": "const message = `Name: ${name}, Age: ${age} years old`",
+                              "range": [
+                                145,
+                                202
+                              ],
+                              "loc": {
+                                "start": {
+                                  "column": 17,
+                                  "line": 7
+                                },
+                                "end": {
+                                  "column": 56,
+                                  "line": 8
+                                }
+                              },
+                              "type": "HtmlBlock",
+                              "children": [
+                                {
+                                  "raw": "message = `Name: ${name}, Age: ${age} years old`",
+                                  "range": [
+                                    153,
+                                    202
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "column": 7,
+                                      "line": 8
+                                    },
+                                    "end": {
+                                      "column": 56,
+                                      "line": 8
+                                    }
+                                  },
+                                  "type": "HtmlBlock",
+                                  "children": [
+                                    {
+                                      "raw": "`Name: ${name}, Age: ${age} years old`",
+                                      "range": [
+                                        163,
+                                        202
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "column": 17,
+                                          "line": 8
+                                        },
+                                        "end": {
+                                          "column": 56,
+                                          "line": 8
+                                        }
+                                      },
+                                      "type": "HtmlBlock",
+                                      "children": [
+                                        {
+                                          "raw": "`Name: ${",
+                                          "range": [
+                                            163,
+                                            173
+                                          ],
+                                          "loc": {
+                                            "start": {
+                                              "column": 17,
+                                              "line": 8
+                                            },
+                                            "end": {
+                                              "column": 27,
+                                              "line": 8
+                                            }
+                                          },
+                                          "type": "Str",
+                                          "value": "Name: "
+                                        },
+                                        {
+                                          "raw": "name}, Age: ${",
+                                          "range": [
+                                            173,
+                                            187
+                                          ],
+                                          "loc": {
+                                            "start": {
+                                              "column": 27,
+                                              "line": 8
+                                            },
+                                            "end": {
+                                              "column": 41,
+                                              "line": 8
+                                            }
+                                          },
+                                          "type": "HtmlBlock",
+                                          "children": [
+                                            {
+                                              "raw": "}, Age: ${",
+                                              "range": [
+                                                177,
+                                                187
+                                              ],
+                                              "loc": {
+                                                "start": {
+                                                  "column": 31,
+                                                  "line": 8
+                                                },
+                                                "end": {
+                                                  "column": 41,
+                                                  "line": 8
+                                                }
+                                              },
+                                              "type": "Str",
+                                              "value": ", Age: "
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "raw": "age} years old`",
+                                          "range": [
+                                            187,
+                                            202
+                                          ],
+                                          "loc": {
+                                            "start": {
+                                              "column": 41,
+                                              "line": 8
+                                            },
+                                            "end": {
+                                              "column": 56,
+                                              "line": 8
+                                            }
+                                          },
+                                          "type": "HtmlBlock",
+                                          "children": [
+                                            {
+                                              "raw": "} years old`",
+                                              "range": [
+                                                190,
+                                                202
+                                              ],
+                                              "loc": {
+                                                "start": {
+                                                  "column": 44,
+                                                  "line": 8
+                                                },
+                                                "end": {
+                                                  "column": 56,
+                                                  "line": 8
+                                                }
+                                              },
+                                              "type": "Str",
+                                              "value": " years old"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "raw": "return <div title={`Greeting: ${name}`}>{simple}</div>;",
+                          "range": [
+                            203,
+                            262
+                          ],
+                          "loc": {
+                            "start": {
+                              "column": 57,
+                              "line": 8
+                            },
+                            "end": {
+                              "column": 57,
+                              "line": 10
+                            }
+                          },
+                          "type": "HtmlBlock",
+                          "children": [
+                            {
+                              "raw": "<div title={`Greeting: ${name}`}>{simple}</div>",
+                              "range": [
+                                213,
+                                261
+                              ],
+                              "loc": {
+                                "start": {
+                                  "column": 8,
+                                  "line": 10
+                                },
+                                "end": {
+                                  "column": 56,
+                                  "line": 10
+                                }
+                              },
+                              "type": "HtmlBlock",
+                              "children": [
+                                {
+                                  "raw": "<div title={`Greeting: ${name}`}>",
+                                  "range": [
+                                    213,
+                                    247
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "column": 8,
+                                      "line": 10
+                                    },
+                                    "end": {
+                                      "column": 42,
+                                      "line": 10
+                                    }
+                                  },
+                                  "type": "HtmlBlock",
+                                  "children": [
+                                    {
+                                      "raw": "title={`Greeting: ${name}`}",
+                                      "range": [
+                                        218,
+                                        246
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "column": 13,
+                                          "line": 10
+                                        },
+                                        "end": {
+                                          "column": 41,
+                                          "line": 10
+                                        }
+                                      },
+                                      "type": "HtmlBlock",
+                                      "children": [
+                                        {
+                                          "raw": "title={`Greeting: ${name}`}",
+                                          "range": [
+                                            218,
+                                            246
+                                          ],
+                                          "loc": {
+                                            "start": {
+                                              "column": 13,
+                                              "line": 10
+                                            },
+                                            "end": {
+                                              "column": 41,
+                                              "line": 10
+                                            }
+                                          },
+                                          "type": "HtmlBlock",
+                                          "children": [
+                                            {
+                                              "raw": "{`Greeting: ${name}`}",
+                                              "range": [
+                                                225,
+                                                246
+                                              ],
+                                              "loc": {
+                                                "start": {
+                                                  "column": 20,
+                                                  "line": 10
+                                                },
+                                                "end": {
+                                                  "column": 41,
+                                                  "line": 10
+                                                }
+                                              },
+                                              "type": "HtmlBlock",
+                                              "children": [
+                                                {
+                                                  "raw": "`Greeting: ${name}`",
+                                                  "range": [
+                                                    226,
+                                                    245
+                                                  ],
+                                                  "loc": {
+                                                    "start": {
+                                                      "column": 21,
+                                                      "line": 10
+                                                    },
+                                                    "end": {
+                                                      "column": 40,
+                                                      "line": 10
+                                                    }
+                                                  },
+                                                  "type": "HtmlBlock",
+                                                  "children": [
+                                                    {
+                                                      "raw": "`Greeting: ${",
+                                                      "range": [
+                                                        226,
+                                                        239
+                                                      ],
+                                                      "loc": {
+                                                        "start": {
+                                                          "column": 21,
+                                                          "line": 10
+                                                        },
+                                                        "end": {
+                                                          "column": 34,
+                                                          "line": 10
+                                                        }
+                                                      },
+                                                      "type": "Str",
+                                                      "value": "Greeting: "
+                                                    },
+                                                    {
+                                                      "raw": "name}`",
+                                                      "range": [
+                                                        239,
+                                                        245
+                                                      ],
+                                                      "loc": {
+                                                        "start": {
+                                                          "column": 34,
+                                                          "line": 10
+                                                        },
+                                                        "end": {
+                                                          "column": 40,
+                                                          "line": 10
+                                                        }
+                                                      },
+                                                      "type": "HtmlBlock",
+                                                      "children": [
+                                                        {
+                                                          "raw": "}`",
+                                                          "range": [
+                                                            243,
+                                                            245
+                                                          ],
+                                                          "loc": {
+                                                            "start": {
+                                                              "column": 38,
+                                                              "line": 10
+                                                            },
+                                                            "end": {
+                                                              "column": 40,
+                                                              "line": 10
+                                                            }
+                                                          },
+                                                          "type": "Str",
+                                                          "value": ""
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
