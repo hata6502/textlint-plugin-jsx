@@ -27,7 +27,7 @@
     "@types/node": "^14.0.22",
     "prettier": "^3.5.3",
     "textlint-scripts": "^13.3.1",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
   "peerDependencies": {
     "typescript": "*"
