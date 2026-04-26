@@ -1,0 +1,351 @@
+{
+  "raw": "`template literal`;\n`Name: ${\"Alice\"}, Age: ${20} years old`;\n// @ts-expect-error\ntag`tagged template`;\n",
+  "range": [
+    0,
+    104
+  ],
+  "loc": {
+    "start": {
+      "column": 0,
+      "line": 1
+    },
+    "end": {
+      "column": 0,
+      "line": 5
+    }
+  },
+  "type": "Document",
+  "children": [
+    {
+      "raw": "`template literal`;",
+      "range": [
+        0,
+        19
+      ],
+      "loc": {
+        "start": {
+          "column": 0,
+          "line": 1
+        },
+        "end": {
+          "column": 19,
+          "line": 1
+        }
+      },
+      "type": "HtmlBlock",
+      "children": [
+        {
+          "raw": "`template literal`",
+          "range": [
+            0,
+            18
+          ],
+          "loc": {
+            "start": {
+              "column": 0,
+              "line": 1
+            },
+            "end": {
+              "column": 18,
+              "line": 1
+            }
+          },
+          "type": "Str",
+          "value": "template literal"
+        }
+      ]
+    },
+    {
+      "raw": "`Name: ${\"Alice\"}, Age: ${20} years old`;",
+      "range": [
+        19,
+        61
+      ],
+      "loc": {
+        "start": {
+          "column": 19,
+          "line": 1
+        },
+        "end": {
+          "column": 41,
+          "line": 2
+        }
+      },
+      "type": "HtmlBlock",
+      "children": [
+        {
+          "raw": "`Name: ${\"Alice\"}, Age: ${20} years old`",
+          "range": [
+            19,
+            60
+          ],
+          "loc": {
+            "start": {
+              "column": 19,
+              "line": 1
+            },
+            "end": {
+              "column": 40,
+              "line": 2
+            }
+          },
+          "type": "HtmlBlock",
+          "children": [
+            {
+              "raw": "`Name: ${",
+              "range": [
+                19,
+                29
+              ],
+              "loc": {
+                "start": {
+                  "column": 19,
+                  "line": 1
+                },
+                "end": {
+                  "column": 9,
+                  "line": 2
+                }
+              },
+              "type": "Str",
+              "value": "Name: "
+            },
+            {
+              "raw": "\"Alice\"}, Age: ${",
+              "range": [
+                29,
+                46
+              ],
+              "loc": {
+                "start": {
+                  "column": 9,
+                  "line": 2
+                },
+                "end": {
+                  "column": 26,
+                  "line": 2
+                }
+              },
+              "type": "HtmlBlock",
+              "children": [
+                {
+                  "raw": "\"Alice\"",
+                  "range": [
+                    29,
+                    36
+                  ],
+                  "loc": {
+                    "start": {
+                      "column": 9,
+                      "line": 2
+                    },
+                    "end": {
+                      "column": 16,
+                      "line": 2
+                    }
+                  },
+                  "type": "Str",
+                  "value": "Alice"
+                },
+                {
+                  "raw": "}, Age: ${",
+                  "range": [
+                    36,
+                    46
+                  ],
+                  "loc": {
+                    "start": {
+                      "column": 16,
+                      "line": 2
+                    },
+                    "end": {
+                      "column": 26,
+                      "line": 2
+                    }
+                  },
+                  "type": "Str",
+                  "value": ", Age: "
+                }
+              ]
+            },
+            {
+              "raw": "20} years old`",
+              "range": [
+                46,
+                60
+              ],
+              "loc": {
+                "start": {
+                  "column": 26,
+                  "line": 2
+                },
+                "end": {
+                  "column": 40,
+                  "line": 2
+                }
+              },
+              "type": "HtmlBlock",
+              "children": [
+                {
+                  "raw": "} years old`",
+                  "range": [
+                    48,
+                    60
+                  ],
+                  "loc": {
+                    "start": {
+                      "column": 28,
+                      "line": 2
+                    },
+                    "end": {
+                      "column": 40,
+                      "line": 2
+                    }
+                  },
+                  "type": "Str",
+                  "value": " years old"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "raw": "tag`tagged template`;",
+      "range": [
+        61,
+        103
+      ],
+      "loc": {
+        "start": {
+          "column": 41,
+          "line": 2
+        },
+        "end": {
+          "column": 21,
+          "line": 4
+        }
+      },
+      "type": "HtmlBlock",
+      "children": [
+        {
+          "raw": "// @ts-expect-error",
+          "range": [
+            62,
+            81
+          ],
+          "type": "Comment",
+          "value": " @ts-expect-error",
+          "loc": {
+            "start": {
+              "column": 0,
+              "line": 3
+            },
+            "end": {
+              "column": 19,
+              "line": 3
+            }
+          }
+        },
+        {
+          "raw": "tag`tagged template`",
+          "range": [
+            61,
+            102
+          ],
+          "loc": {
+            "start": {
+              "column": 41,
+              "line": 2
+            },
+            "end": {
+              "column": 20,
+              "line": 4
+            }
+          },
+          "type": "HtmlBlock",
+          "children": [
+            {
+              "raw": "// @ts-expect-error",
+              "range": [
+                62,
+                81
+              ],
+              "type": "Comment",
+              "value": " @ts-expect-error",
+              "loc": {
+                "start": {
+                  "column": 0,
+                  "line": 3
+                },
+                "end": {
+                  "column": 19,
+                  "line": 3
+                }
+              }
+            },
+            {
+              "raw": "tag",
+              "range": [
+                61,
+                85
+              ],
+              "loc": {
+                "start": {
+                  "column": 41,
+                  "line": 2
+                },
+                "end": {
+                  "column": 3,
+                  "line": 4
+                }
+              },
+              "type": "HtmlBlock",
+              "children": [
+                {
+                  "raw": "// @ts-expect-error",
+                  "range": [
+                    62,
+                    81
+                  ],
+                  "type": "Comment",
+                  "value": " @ts-expect-error",
+                  "loc": {
+                    "start": {
+                      "column": 0,
+                      "line": 3
+                    },
+                    "end": {
+                      "column": 19,
+                      "line": 3
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "raw": "`tagged template`",
+              "range": [
+                85,
+                102
+              ],
+              "loc": {
+                "start": {
+                  "column": 3,
+                  "line": 4
+                },
+                "end": {
+                  "column": 20,
+                  "line": 4
+                }
+              },
+              "type": "Str",
+              "value": "tagged template"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

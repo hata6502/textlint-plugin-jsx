@@ -66,7 +66,7 @@ const trimQuotes = (str: string) => {
   if (str.length < 2) {
     return str;
   }
-  if (str[0] !== `"` && str[0] !== `'`) {
+  if (str[0] !== `"` && str[0] !== `'` && str[0] !== "`") {
     return str;
   }
   if (str[0] !== str[str.length - 1]) {
@@ -133,11 +133,36 @@ const jsxToAST = (node: ts.Node) => {
       } satisfies TxtTextNode;
     }
 
-    case ts.SyntaxKind.StringLiteral: {
+    case ts.SyntaxKind.StringLiteral:
+    case ts.SyntaxKind.NoSubstitutionTemplateLiteral: {
       return {
         ...txtPartialNode,
         type: ASTNodeTypes.Str,
         value: trimQuotes(node.getText()),
+      } satisfies TxtTextNode;
+    }
+
+    case ts.SyntaxKind.TemplateHead: {
+      return {
+        ...txtPartialNode,
+        type: ASTNodeTypes.Str,
+        value: node.getText().slice(1, -2),
+      } satisfies TxtTextNode;
+    }
+
+    case ts.SyntaxKind.TemplateMiddle: {
+      return {
+        ...txtPartialNode,
+        type: ASTNodeTypes.Str,
+        value: node.getText().slice(1, -2),
+      } satisfies TxtTextNode;
+    }
+
+    case ts.SyntaxKind.TemplateTail: {
+      return {
+        ...txtPartialNode,
+        type: ASTNodeTypes.Str,
+        value: node.getText().slice(1, -1),
       } satisfies TxtTextNode;
     }
 
