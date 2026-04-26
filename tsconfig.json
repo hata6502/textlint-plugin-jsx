@@ -2,13 +2,14 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "module": "CommonJS",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "outDir": "dist",
+    "rootDir": "src",
     "pretty": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "ES5"
+    "target": "ESNext"
   },
   "include": ["src/**/*"]
 }
