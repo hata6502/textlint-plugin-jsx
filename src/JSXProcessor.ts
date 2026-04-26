@@ -75,18 +75,6 @@ const trimQuotes = (str: string) => {
   return str.slice(1, -1);
 };
 
-const trimTemplateHead = (str: string) => {
-  return str.slice(1, -2);
-};
-
-const trimTemplateMiddle = (str: string) => {
-  return str.slice(1, -2);
-};
-
-const trimTemplateTail = (str: string) => {
-  return str.slice(1, -1);
-};
-
 const jsxToAST = (node: ts.Node) => {
   const startLineAndCharacter = node
     .getSourceFile()
@@ -158,7 +146,7 @@ const jsxToAST = (node: ts.Node) => {
       return {
         ...txtPartialNode,
         type: ASTNodeTypes.Str,
-        value: trimTemplateHead(node.getText()),
+        value: node.getText().slice(1, -2),
       } satisfies TxtTextNode;
     }
 
@@ -166,7 +154,7 @@ const jsxToAST = (node: ts.Node) => {
       return {
         ...txtPartialNode,
         type: ASTNodeTypes.Str,
-        value: trimTemplateMiddle(node.getText()),
+        value: node.getText().slice(1, -2),
       } satisfies TxtTextNode;
     }
 
@@ -174,7 +162,7 @@ const jsxToAST = (node: ts.Node) => {
       return {
         ...txtPartialNode,
         type: ASTNodeTypes.Str,
-        value: trimTemplateTail(node.getText()),
+        value: node.getText().slice(1, -1),
       } satisfies TxtTextNode;
     }
 
