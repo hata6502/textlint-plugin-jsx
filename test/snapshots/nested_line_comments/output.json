@@ -225,16 +225,16 @@
                         {
                           "raw": "\"str\"",
                           "range": [
-                            64,
-                            70
+                            66,
+                            69
                           ],
                           "loc": {
                             "start": {
-                              "column": 10,
+                              "column": 12,
                               "line": 5
                             },
                             "end": {
-                              "column": 16,
+                              "column": 15,
                               "line": 5
                             }
                           },

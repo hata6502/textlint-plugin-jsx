@@ -37,16 +37,16 @@
         {
           "raw": "`template literal`",
           "range": [
-            0,
-            18
+            1,
+            17
           ],
           "loc": {
             "start": {
-              "column": 0,
+              "column": 1,
               "line": 1
             },
             "end": {
-              "column": 18,
+              "column": 17,
               "line": 1
             }
           },
@@ -94,16 +94,16 @@
             {
               "raw": "`Name: ${",
               "range": [
-                19,
-                29
+                21,
+                27
               ],
               "loc": {
                 "start": {
-                  "column": 19,
-                  "line": 1
+                  "column": 1,
+                  "line": 2
                 },
                 "end": {
-                  "column": 9,
+                  "column": 7,
                   "line": 2
                 }
               },
@@ -131,16 +131,16 @@
                 {
                   "raw": "\"Alice\"",
                   "range": [
-                    29,
-                    36
+                    30,
+                    35
                   ],
                   "loc": {
                     "start": {
-                      "column": 9,
+                      "column": 10,
                       "line": 2
                     },
                     "end": {
-                      "column": 16,
+                      "column": 15,
                       "line": 2
                     }
                   },
@@ -150,16 +150,16 @@
                 {
                   "raw": "}, Age: ${",
                   "range": [
-                    36,
-                    46
+                    37,
+                    44
                   ],
                   "loc": {
                     "start": {
-                      "column": 16,
+                      "column": 17,
                       "line": 2
                     },
                     "end": {
-                      "column": 26,
+                      "column": 24,
                       "line": 2
                     }
                   },
@@ -189,16 +189,16 @@
                 {
                   "raw": "} years old`",
                   "range": [
-                    48,
-                    60
+                    49,
+                    59
                   ],
                   "loc": {
                     "start": {
-                      "column": 28,
+                      "column": 29,
                       "line": 2
                     },
                     "end": {
-                      "column": 40,
+                      "column": 39,
                       "line": 2
                     }
                   },
@@ -327,16 +327,16 @@
             {
               "raw": "`tagged template`",
               "range": [
-                85,
-                102
+                86,
+                101
               ],
               "loc": {
                 "start": {
-                  "column": 3,
+                  "column": 4,
                   "line": 4
                 },
                 "end": {
-                  "column": 20,
+                  "column": 19,
                   "line": 4
                 }
               },

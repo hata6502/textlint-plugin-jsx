@@ -163,16 +163,16 @@
                                     {
                                       "raw": "\"Hello World\"",
                                       "range": [
-                                        44,
-                                        58
+                                        46,
+                                        57
                                       ],
                                       "loc": {
                                         "start": {
-                                          "column": 14,
+                                          "column": 16,
                                           "line": 2
                                         },
                                         "end": {
-                                          "column": 28,
+                                          "column": 27,
                                           "line": 2
                                         }
                                       },
@@ -279,16 +279,16 @@
                                         {
                                           "raw": "\"Howdy, World\"",
                                           "range": [
-                                            124,
-                                            138
+                                            125,
+                                            137
                                           ],
                                           "loc": {
                                             "start": {
-                                              "column": 8,
+                                              "column": 9,
                                               "line": 7
                                             },
                                             "end": {
-                                              "column": 22,
+                                              "column": 21,
                                               "line": 7
                                             }
                                           },
