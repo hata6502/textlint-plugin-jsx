@@ -62,6 +62,19 @@ const extractCommentNodes = (node: ts.Node): TxtNode[] => {
 // A list of ts.SyntaxKind that the parsing of comments at the parent node is skipped. Comments should be parsed at the child node.
 const ignoredCommentKinds = [ts.SyntaxKind.SourceFile];
 
+const locFromPositions = (
+  sourceFile: ts.SourceFile,
+  start: number,
+  end: number,
+): TxtNode["loc"] => {
+  const startPos = sourceFile.getLineAndCharacterOfPosition(start);
+  const endPos = sourceFile.getLineAndCharacterOfPosition(end);
+  return {
+    start: { column: startPos.character, line: startPos.line + 1 },
+    end: { column: endPos.character, line: endPos.line + 1 },
+  };
+};
+
 const trimQuotes = (str: string) => {
   if (str.length < 2) {
     return str;
@@ -133,34 +146,42 @@ const jsxToAST = (node: ts.Node) => {
       } satisfies TxtTextNode;
     }
 
+    // Set range and loc to the content position excluding delimiters.
+    // If delimiters are included in range, textlint rules that inspect
+    // surrounding characters in the source will include them.
     case ts.SyntaxKind.StringLiteral:
     case ts.SyntaxKind.NoSubstitutionTemplateLiteral: {
+      const start = node.getStart() + 1;
+      const end = node.end - 1;
       return {
         ...txtPartialNode,
+        range: [start, end],
+        loc: locFromPositions(node.getSourceFile(), start, end),
         type: ASTNodeTypes.Str,
         value: trimQuotes(node.getText()),
       } satisfies TxtTextNode;
     }
 
-    case ts.SyntaxKind.TemplateHead: {
-      return {
-        ...txtPartialNode,
-        type: ASTNodeTypes.Str,
-        value: node.getText().slice(1, -2),
-      } satisfies TxtTextNode;
-    }
-
+    case ts.SyntaxKind.TemplateHead:
     case ts.SyntaxKind.TemplateMiddle: {
+      const start = node.getStart() + 1;
+      const end = node.end - 2;
       return {
         ...txtPartialNode,
+        range: [start, end],
+        loc: locFromPositions(node.getSourceFile(), start, end),
         type: ASTNodeTypes.Str,
         value: node.getText().slice(1, -2),
       } satisfies TxtTextNode;
     }
 
     case ts.SyntaxKind.TemplateTail: {
+      const start = node.getStart() + 1;
+      const end = node.end - 1;
       return {
         ...txtPartialNode,
+        range: [start, end],
+        loc: locFromPositions(node.getSourceFile(), start, end),
         type: ASTNodeTypes.Str,
         value: node.getText().slice(1, -1),
       } satisfies TxtTextNode;
