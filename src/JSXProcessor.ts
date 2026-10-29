@@ -8,7 +8,7 @@ import type {
   TextlintPluginOptions,
   TextlintPluginProcessor,
 } from "@textlint/types";
-import * as ts from "typescript";
+import * as ts from "@typescript/typescript6";
 
 const extractCommentNodes = (node: ts.Node): TxtNode[] => {
   const commentRanges = ts.getLeadingCommentRanges(
